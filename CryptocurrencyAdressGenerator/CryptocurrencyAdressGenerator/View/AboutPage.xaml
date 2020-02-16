@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns:datacontext ="clr-namespace:CryptocurrencyAdressGenerator.ViewModel.Implementation"
+             xmlns:usercontrol ="clr-namespace:CryptocurrencyAdressGenerator.View.UserControl"
+             
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CryptocurrencyAdressGenerator.View.AboutPage">
+
+    <NavigationPage.HasNavigationBar>false</NavigationPage.HasNavigationBar>
+
+    <ContentPage.BindingContext>
+        <datacontext:AboutViewModel></datacontext:AboutViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        
+        <StackLayout>
+            
+            <Label Text="" TextDecorations="None" FontSize="Small" />
+            <Label Text="Want your Ethereum address?" TextDecorations="None" FontSize="Medium" HorizontalOptions="CenterAndExpand" />
+            <Label Text="The app will generate an address for you." TextDecorations="None" FontSize="Small" />
+            <Label Text="Write numbers or letters in the substring field." TextDecorations="None" FontSize="Small" />
+            <Label Text="XXX format, the address will start with these values." TextDecorations="None" FontSize="Small" />
+            <Label Text="" TextDecorations="None" FontSize="Small" />
+            <Label Text="Principle of operation" TextDecorations="None" FontSize="Medium" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Random generation, until it matches your substring" TextDecorations="None" FontSize="Small" />
+            <Label Text="" TextDecorations="None" FontSize="Small" />
+            <Label Text="Open source" TextDecorations="None" FontSize="Medium" HorizontalOptions="CenterAndExpand" />
+            <Label Text="You can check the source code of the application by following the link" TextDecorations="None" FontSize="Small" />
+
+            <Label TextColor="Blue" Text="https://github.com/fury02/Your-Ethereum-Address">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ClickCommandGitHub}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            
+            <Label Text="" TextDecorations="None" FontSize="Small" />
+            <Label Text="" TextDecorations="None" FontSize="Small" />
+
+            <Label Text="You can send some ethereum" TextDecorations="None" FontSize="Small" />
+
+            <Label TextColor="Blue" Text="address: 0x7775397118C5DfBB7b7b40DBb711DD01371F08db">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ClickCommandEtherscan}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

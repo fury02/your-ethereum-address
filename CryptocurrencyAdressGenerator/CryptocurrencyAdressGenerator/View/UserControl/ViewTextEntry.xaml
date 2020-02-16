@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+             xmlns:datacontext ="clr-namespace:CryptocurrencyAdressGenerator.ViewModel.Implementation"
+             xmlns:contentviewcontext ="clr-namespace:CryptocurrencyAdressGenerator.View.UserControl"
+             xmlns:renderers ="clr-namespace:CryptocurrencyAdressGenerator.Renderers"
+    
+             xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Name="this"
+             x:Class="CryptocurrencyAdressGenerator.View.UserControl.ViewTextEntry">
+    
+    <StackLayout>
+
+        <Frame BindingContext="{x:Reference this}"  BackgroundColor="Transparent" BorderColor="Black">
+            <renderers:CustomBaseEntry x:Name="EntrySubstringTextPublic" FontSize="Medium" MaxLength="4" Text="{Binding SubstringTextPublic, FallbackValue='0xSubstring'}"  HorizontalTextAlignment="Center" VerticalOptions="Center"></renderers:CustomBaseEntry>
+        </Frame>
+
+        <Label FontSize="Micro" FontAttributes="Italic"  TextColor="Gray" Text="Substring" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"></Label>
+
+    </StackLayout>
+    
+</ContentView>

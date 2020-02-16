@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage    
+    xmlns:datacontext ="clr-namespace:CryptocurrencyAdressGenerator.ViewModel.Implementation"
+    xmlns:usercontrol ="clr-namespace:CryptocurrencyAdressGenerator.View.UserControl"
+   
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+    mc:Ignorable="d"
+    x:Class="CryptocurrencyAdressGenerator.View.MainPage">
+
+    <NavigationPage.HasNavigationBar>false</NavigationPage.HasNavigationBar>
+
+    <ContentPage.BindingContext>
+        <datacontext:MainViewModel></datacontext:MainViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+        <AbsoluteLayout BackgroundColor="White">
+
+            <usercontrol:ViewTextEntry  AbsoluteLayout.LayoutBounds="45,50,300,50" SubstringTextPublic="{Binding StringPattern}"></usercontrol:ViewTextEntry>
+            <usercontrol:ViewPublicKey  AbsoluteLayout.LayoutBounds="45,230,300,50"  RandomKeyPublic="{Binding RndKeyPublic}" ></usercontrol:ViewPublicKey>
+            <usercontrol:ViewSecretKey AbsoluteLayout.LayoutBounds="45,370,300,50" RandomKeySecret="{Binding RndKeyPrivate}"></usercontrol:ViewSecretKey>
+
+            <ActivityIndicator AbsoluteLayout.LayoutBounds="45,520,300,50" IsRunning="{Binding IsPlayIndicator}" IsVisible="{Binding IsPlayIndicator}"  Grid.Row="10" Grid.Column="3" Color="Gray"></ActivityIndicator>
+
+            <Button AbsoluteLayout.LayoutBounds="45,600,300,50" Command="{Binding CommandStart}" Text="Start" TextColor="Gray" CornerRadius="5" BackgroundColor="White" BorderColor="Black" BorderWidth="2"/>
+            <Button AbsoluteLayout.LayoutBounds="45,680,300,50" Command="{Binding  CommandStop}" Text="Stop" TextColor="Gray" CornerRadius="5" BackgroundColor="White" BorderColor="Black" BorderWidth="2"  />
+
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+
+
+</ContentPage>
+
+
+
+
+<!--<Grid BackgroundColor="White">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <usercontrol:ViewTextEntry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" SubstringTextPublic="{Binding StringPattern}"></usercontrol:ViewTextEntry>
+            <usercontrol:ViewPublicKey Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5"  RandomKeyPublic="{Binding RndKeyPublic}" ></usercontrol:ViewPublicKey>
+            <usercontrol:ViewSecretKey Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" RandomKeySecret="{Binding RndKeyPrivate}"></usercontrol:ViewSecretKey>
+
+            -->
+<!--<ImageButton Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2"></ImageButton>-->
+<!--
+
+            <ActivityIndicator IsRunning="{Binding IsPlayIndicator}" IsVisible="{Binding IsPlayIndicator}"  Grid.Row="10" Grid.Column="3" Color="Gray"></ActivityIndicator>
+
+            <Button Command="{Binding CommandStart}" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="5" Text="Start" TextColor="Gray" CornerRadius="5" BackgroundColor="White" BorderColor="Black" BorderWidth="1"/>
+            <Button Command="{Binding  CommandStop}" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="5" Text="Stop" TextColor="Gray" CornerRadius="5" BackgroundColor="White" BorderColor="Black" BorderWidth="1"  />
+
+
+        </Grid>-->

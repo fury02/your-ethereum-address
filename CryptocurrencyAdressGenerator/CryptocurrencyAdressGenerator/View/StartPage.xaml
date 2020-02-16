@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage 
+             xmlns:pages="clr-namespace:CryptocurrencyAdressGenerator.View"                         
+             BarTextColor="White"
+             BarBackgroundColor="Green"
+                      
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CryptocurrencyAdressGenerator.View.StartPage">
+
+    <NavigationPage Title="Ethereum">
+        <x:Arguments>
+            <pages:MainPage></pages:MainPage>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="About">
+        <x:Arguments>
+            <pages:AboutPage></pages:AboutPage>
+        </x:Arguments>
+    </NavigationPage>
+
+</TabbedPage>
