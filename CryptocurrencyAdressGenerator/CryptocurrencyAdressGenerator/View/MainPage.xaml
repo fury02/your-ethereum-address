@@ -17,22 +17,23 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
+        <ScrollView>
+            
+            <AbsoluteLayout BackgroundColor="White">
 
-        <AbsoluteLayout BackgroundColor="White">
+                <usercontrol:ViewTextEntry  AbsoluteLayout.LayoutBounds="45,50,300,50" SubstringTextPublic="{Binding StringPattern}"></usercontrol:ViewTextEntry>
+                <usercontrol:ViewPublicKey  AbsoluteLayout.LayoutBounds="45,210,300,50"  RandomKeyPublic="{Binding RndKeyPublic}" ></usercontrol:ViewPublicKey>
+                <usercontrol:ViewSecretKey AbsoluteLayout.LayoutBounds="45,340,300,50" RandomKeySecret="{Binding RndKeyPrivate}"></usercontrol:ViewSecretKey>
 
-            <usercontrol:ViewTextEntry  AbsoluteLayout.LayoutBounds="45,50,300,50" SubstringTextPublic="{Binding StringPattern}"></usercontrol:ViewTextEntry>
-            <usercontrol:ViewPublicKey  AbsoluteLayout.LayoutBounds="45,230,300,50"  RandomKeyPublic="{Binding RndKeyPublic}" ></usercontrol:ViewPublicKey>
-            <usercontrol:ViewSecretKey AbsoluteLayout.LayoutBounds="45,370,300,50" RandomKeySecret="{Binding RndKeyPrivate}"></usercontrol:ViewSecretKey>
+                <ActivityIndicator AbsoluteLayout.LayoutBounds="45,500,300,50" IsRunning="{Binding IsPlayIndicator}" IsVisible="{Binding IsPlayIndicator}"  Grid.Row="10" Grid.Column="3" Color="Gray"></ActivityIndicator>
 
-            <ActivityIndicator AbsoluteLayout.LayoutBounds="45,520,300,50" IsRunning="{Binding IsPlayIndicator}" IsVisible="{Binding IsPlayIndicator}"  Grid.Row="10" Grid.Column="3" Color="Gray"></ActivityIndicator>
-
-            <Button AbsoluteLayout.LayoutBounds="45,600,300,50" Command="{Binding CommandStart}" Text="Start" TextColor="Gray" CornerRadius="5" BackgroundColor="White" BorderColor="Black" BorderWidth="2"/>
-            <Button AbsoluteLayout.LayoutBounds="45,680,300,50" Command="{Binding  CommandStop}" Text="Stop" TextColor="Gray" CornerRadius="5" BackgroundColor="White" BorderColor="Black" BorderWidth="2"  />
-
-        </AbsoluteLayout>
-        
+                <Button AbsoluteLayout.LayoutBounds="45,580,300,50" Command="{Binding CommandStart}" Text="Start" TextColor="Gray" CornerRadius="5" BackgroundColor="White" BorderColor="Black" BorderWidth="2"/>
+                <Button AbsoluteLayout.LayoutBounds="45,650,300,50" Command="{Binding  CommandStop}" Text="Stop" TextColor="Gray" CornerRadius="5" BackgroundColor="White" BorderColor="Black" BorderWidth="2"  />
+          
+            </AbsoluteLayout>
+            
+        </ScrollView>
     </ContentPage.Content>
-
 
 </ContentPage>
 
